@@ -9,7 +9,7 @@ from myutils import OLLAMA_URL, MODEL_NAME, TIMEOUT
 api_key = "sk-wwolcqsmeztifuouqxehvchcoobuwwokzqjmyckenzhknbab"
 url = "https://api.siliconflow.cn/v1/chat/completions"
 
-model_name = "deepseek-ai/DeepSeek-V3"
+model_name = "deepseek-ai/DeepSeek-V3.2"
 system_prompt_version1 = """
 You are an Activity Recognition Agent for a mobile power management system.
 
@@ -597,7 +597,7 @@ if __name__ == "__main__":
 
     # 3. 历史记录
     mock_history = {
-        "recentAppsRaw": "  * Recent #0: Task{45fbc6 #269 type=standard A=10331:com.example.suapp}\n  * Recent #1: Task{e5a4d47 #5 type=undefined I=com.android.launcher\/.Launcher}\n  * Recent #2: Task{81eb588 #267 type=standard A=10342:android.task.kugou}\n"
+        "recentAppsRaw": "  * Recent #0: Task{45fbc6 #269 type=standard A=10331:com.example.suapp}\n  * Recent #1: Task{e5a4d47 #5 type=undefined I=com.android.launcher\\/.Launcher}\n  * Recent #2: Task{81eb588 #267 type=standard A=10342:android.task.kugou}\n"
     }
 
     # 运行 Agent

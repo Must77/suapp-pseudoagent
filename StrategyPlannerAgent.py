@@ -8,7 +8,7 @@ import uuid
 api_key = "sk-wwolcqsmeztifuouqxehvchcoobuwwokzqjmyckenzhknbab"
 url = "https://api.siliconflow.cn/v1/chat/completions"
 
-model_name = "deepseek-ai/DeepSeek-V3"
+model_name = "deepseek-ai/DeepSeek-V3.2"
 system_prompt_version1 = """
 You are a Strategy Planner Agent for PowerLens, a context-aware mobile power management system.
 
@@ -51,7 +51,7 @@ RULES:
 """
 
 # TODO: 策略合成的输入中有用户的操作，那是每次用户操作都要调用一次策略合成吗
-def strategy_planner_agent(context_summary, activity_result, memory_result, retrieved_strategies, pdl_constraints):
+def strategy_planner_agent(context, activity_result, memory_result, retrieved_strategies, pdl_constraints):
     """
     Strategy Planner Agent (Policy Composer)
     综合多方信息，生成最终电源管理策略。
@@ -62,7 +62,7 @@ def strategy_planner_agent(context_summary, activity_result, memory_result, retr
 
     # --- 2. 组装 Input Data (关键：数据清洗与精简) ---
     input_payload = {
-        "Device_Context": context_summary,         # 电池、环境等
+        "Device_Context": context,         # 电池、环境等
         "User_Activity": activity_result,          # 正在干什么
         "Memory_Intent": memory_result,            # 用户刚刚手动调了啥
         "Retrieved_Strategies": retrieved_strategies, # 知识库查到的参考模板

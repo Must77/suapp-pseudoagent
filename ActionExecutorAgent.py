@@ -148,6 +148,12 @@ if __name__ == "__main__":
 
     
     result = action_executor_agent(mock_policy, mock_approved_actions, execution_mode)
+
+    print("hello")
+    for cmd in result['executed_commands']:
+        print(f"第{cmd['command_index']}个要执行的命令是{cmd['command']}")
+    print("bye")
+
     print("\n--- Execution Result ---")
     print(json.dumps(result, ensure_ascii=False, indent=2))
 
