@@ -1,0 +1,26 @@
+# TODO: 找几个很明显的应用来录制视频demo
+# 用户demo 要有很直观的测量指标
+# 时间耐久度测试
+
+# TODO: 触发的频率
+
+# TODO: 对于首次出现的策略, 在vaildator中验证, 一旦验证通过了就可以加入到知识库中
+# 知识库里就是正确 可以执行 有效的数据
+# 知识库和 memory 模块相分开?
+# 知识库中是(用户, app, 策略)三元组
+
+# TODO: 用电计划
+# feat: DEMO version: 根据当天日历中产生的用电计划, 未来的时间维度可以更长
+# context sensor 要给 memory 传递用电计划
+# memory 中也要有用电计划
+# memory是(用户, 当天的安排)元组
+
+# TODO: 通过RAG来检索memory中的知识
+
+# TODO: policy composer 的输入要增加
+# 增加的内容是memory中的数据生成的prompt
+
+# TODO: 用户充放电计划, ios like
+# nofix: 一旦延长了可使用的时间, 那么用户可能改变充电计划
+
+# TODO: user reaction
