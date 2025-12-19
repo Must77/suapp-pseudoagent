@@ -8,21 +8,25 @@ from ActionExecutorAgent import action_executor_agent
 def main():
     # Step 1: 识别当前用户活动
     activity = activity_recognition_agent(context, ui_tree, history)
-    activity = json.dumps(activity, ensure_ascii=False, indent=4)
+    activity = json.dumps(activity, ensure_ascii=False, indent=2)
     print(f"[master]Recognized Activity: {activity}\n")
 
     # Step 2: 规划节能策略
     policy = strategy_planner_agent(context, activity, mock_memory, strategies, constraints)
-    policy = json.dumps(policy, ensure_ascii=False, indent=4)
+    policy = json.dumps(policy, ensure_ascii=False, indent=2)
     print(f"[master]Planned Strategies: {policy}\n")
 
     # Step 3: 验证策略约束
     valid_strategies = constraint_validator_agent(policy, constraints, capacity, current_battery_level=100)
-    valid_strategies = json.dumps(valid_strategies, ensure_ascii=False, indent=4)
+    valid_strategies = json.dumps(valid_strategies, ensure_ascii=False, indent=2)
     print(f"[master]Valid Strategies: {valid_strategies}\n")
 
     # Step 4: 执行动作
     action_seq = action_executor_agent(policy, valid_strategies)
+    action_seq_json = json.dumps(action_seq, ensure_ascii=False, indent=2)
+    print(f"[master]Generated Action Sequence: {action_seq_json}\n")
+
+    # 输出要执行的命令 for test
     print("[master]Shell Commands to Execute:")
     for cmd in action_seq['executed_commands']:
         print(f"第{cmd['command_index']}个要执行的命令是{cmd['command']}")
