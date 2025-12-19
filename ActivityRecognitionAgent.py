@@ -34,6 +34,7 @@ OUTPUT FORMAT (JSON):
 ACTIVITY TYPES:
 - NAVIGATION: User is using a navigation app (maps, GPS)
 - VIDEO_CONFERENCE: User is in a video call (Zoom, Teams, WeChat)
+- MUSIC_LISTENING: User is listening to music or audio content
 - READING: User is reading text content (articles, books, documents)
 - GAMING: User is playing games
 - VIDEO_WATCHING: User is watching videos
